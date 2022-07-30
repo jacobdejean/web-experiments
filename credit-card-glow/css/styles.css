@@ -1,0 +1,184 @@
+@font-face {
+    font-family: Hack;
+    src: url("./fonts/Hack-Bold.ttf") format("ttf");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Hack;
+    src: url("./fonts/Hack-BoldItalic.ttf") format("ttf");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 12px;
+    background-color: white;
+
+    font-family: Hack;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 700px;
+    height: 500px;
+}
+
+.hold {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: white;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+
+    overflow: hidden;
+
+    width: 505px;
+    height: 319px;
+    padding: 1rem;
+
+    border-radius: 20px;
+
+    color: white;
+    background: rgb(94, 43, 255);
+    background: linear-gradient(
+            45deg,
+            rgba(94, 43, 255, 1) 0%,
+            rgba(192, 76, 253, 1) 100%
+    );
+
+    filter: drop-shadow(0px 0px 10px #00000088);
+
+    transform: perspective(800px) translateZ(-200px) rotate3d(1, 1, 0, 0deg);
+
+    transition: filter 0.5s ease-in-out, background-color 0s ease-in-out, transform 0.5s ease;
+}
+
+.card-area {
+    position: absolute;
+
+    margin-top: -1rem;
+    margin-left: -1rem;
+
+    width: 100%;
+    height: 100%;
+}
+
+.card-region {
+    display: inline-block;
+    width: 49%;
+    height: 50%;
+}
+
+.card-shine {
+
+}
+
+.card:hover {
+    transform: perspective(800px) translateZ(-150px);
+
+    border: solid 2px #FC6DAB;
+
+    filter: drop-shadow(5px 10px 20px #00000088);
+}
+
+.card-alt-color {
+    background: rgb(247,246,197);
+    background: linear-gradient(5deg, rgba(247,246,197,1) 0%, rgba(243,250,225,1) 100%);
+
+    color: black;
+}
+
+.chip {
+    position: absolute;
+    right: 5rem;
+    bottom: 8rem;
+    width: 4.5rem;
+}
+
+.card-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+.info-div {
+    padding: 1rem;
+    max-width: 20rem;
+}
+
+.second-word {
+    transform: scale(1.2);
+}
+
+.logo {
+    height: 1.8rem;
+    filter: invert(100%);
+}
+
+.beta-tag {
+    color: white;
+    font-size: 1rem;
+    padding: 0.4rem;
+    border-radius: 20px;
+    background-color: deeppink;
+}
+
+.button-flex {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    column-gap: 1rem;
+}
+
+.hero-button {
+    --feature-color: #C04CFD;
+    --feature-color-hover: #993cca;
+
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-family: Hack, sans-serif;
+    font-weight: bold;
+    background-color: var(--feature-color);
+    border: none;
+    color: white;
+    padding: 0.5rem 2rem;
+}
+
+.hero-button:hover {
+    background-color: var(--feature-color-hover);
+}
+
+.divider-text {
+    position: absolute;
+}
