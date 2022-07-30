@@ -132,6 +132,10 @@ h1 {
     opacity: 100%;
 }
 
+.card-alt-background .logo {
+    filter: invert(0%);
+}
+
 .card-menu-button {
     position: absolute;
     right: 0;
