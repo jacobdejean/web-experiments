@@ -31,7 +31,7 @@ p {
 }
 
 h1 {
-    margin: 0px;
+    margin: 0;
 }
 
 .container {
@@ -39,16 +39,18 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    row-gap: 4rem;
     width: 700px;
     height: 500px;
 }
 
 .hold {
     position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     background-color: white;
 }
 
@@ -69,18 +71,11 @@ h1 {
     border-radius: 20px;
 
     color: white;
-    background: rgb(94, 43, 255);
-    background: linear-gradient(
-            45deg,
-            rgba(94, 43, 255, 1) 0%,
-            rgba(192, 76, 253, 1) 100%
-    );
 
+    background-color: transparent;
     filter: drop-shadow(0px 0px 10px #00000088);
-
-    transform: perspective(800px) translateZ(-200px) rotate3d(1, 1, 0, 0deg);
-
-    transition: filter 0.5s ease-in-out, background-color 0s ease-in-out, transform 0.5s ease;
+    transform: rotate3d(1, 1, 0, 0deg);
+    transition: filter 0.5s ease-in-out, background-color 0.5s ease-in-out, transform 0.5s ease;
 }
 
 .card-area {
@@ -93,43 +88,103 @@ h1 {
     height: 100%;
 }
 
+.card-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: -1rem;
+    margin-left: -1rem;
+
+    background: rgb(94, 43, 255);
+    background: linear-gradient(
+            45deg,
+            rgba(94, 43, 255, 1) 0%,
+            rgba(192, 76, 253, 1) 100%
+    );
+
+    transition: margin-left 0.5s ease-in-out;
+}
+
 .card-region {
     display: inline-block;
     width: 49%;
     height: 50%;
 }
 
-.card-shine {
-
-}
 
 .card:hover {
-    transform: perspective(800px) translateZ(-150px);
 
-    border: solid 2px #FC6DAB;
 
-    filter: drop-shadow(5px 10px 20px #00000088);
+
+    border: solid 2px black;
+
+    filter: drop-shadow(0px 0px 20px #00000088);
+}
+
+.card:hover .card-background {
+    margin-left: -100%;
+}
+
+.card:hover .card-line {
+    opacity: 0;
+}
+
+.card-alt-background:hover .card-line {
+    opacity: 100%;
+}
+
+.card-menu-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    padding-right: 5rem;
+    padding-left: 3rem;
 }
 
 .card-alt-color {
+    color: black;
+}
+
+.card-alt-background {
     background: rgb(247,246,197);
     background: linear-gradient(5deg, rgba(247,246,197,1) 0%, rgba(243,250,225,1) 100%);
+}
 
+.card-menu {
+    padding-left: 2rem;
+    padding-top: 2rem;
+    position: absolute;
+    width: 100%;
+    max-height: 319px;;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
     color: black;
 }
 
 .chip {
     position: absolute;
     right: 5rem;
-    bottom: 8rem;
+    bottom: -1.5rem;
     width: 4.5rem;
 }
 
 .card-line {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 22px;
+
+    transition: opacity 0.125s ease-in-out;
 }
 
 .info-div {
@@ -181,4 +236,8 @@ h1 {
 
 .divider-text {
     position: absolute;
+}
+
+.hide-card-button {
+
 }

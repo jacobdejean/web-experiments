@@ -13,10 +13,10 @@ for(let i = 0; i < 4; i++) {
 function handleMouseEnter(evt) {
     let card = evt.target.parentElement.parentElement;
     let region = evt.target.getAttribute('data-region');
-    let transform = 'perspective(800px) translateZ(-200px) '
+    let transform = 'perspective(800px) '
     let rX, rY, rZ, deg;
 
-    deg = 15;
+    deg = 3;
     rZ = 0;
 
     console.log(region);
@@ -40,5 +40,5 @@ function handleMouseEnter(evt) {
 
 function handleMouseLeave(evt) {
     let card = evt.target.parentElement.parentElement;
-    card.style.transform = 'perspective(800px) translateZ(-200px) rotate3d(1, 1, 0, 0deg)';
+    card.style.transform = 'perspective(800px) translateZ(0px) rotate3d(1, 1, 0, 0deg)';
 }
