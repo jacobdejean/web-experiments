@@ -42,3 +42,18 @@ function handleMouseLeave(evt) {
     let card = evt.target.parentElement.parentElement;
     card.style.transform = 'perspective(800px) translateZ(0px) rotate3d(1, 1, 0, 0deg)';
 }
+
+let body = document.getElementById('body');
+let darkModeButton = document.getElementById('dark-mode-button');
+let darkMode = false;
+
+darkModeButton.addEventListener('click', toggleTheme);
+
+function toggleTheme() {
+    darkMode = !darkMode;
+
+    body.style.setProperty('--m-text-color', darkMode ? 'white' : 'black');
+    body.style.setProperty('--m-background-color', darkMode ? 'black' : 'white');
+
+    darkModeButton.style.filter = 'invert(' + (darkMode ? 100 : 0 )+ '%)';
+}
